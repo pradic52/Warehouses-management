@@ -1,0 +1,1 @@
+ACCOUNT_CONFIG_APP_LIST = ["account_config"]

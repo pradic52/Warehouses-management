@@ -21,6 +21,8 @@ ALLAUTH_CONTEXT_PROCESSOR = ['django.template.context_processors.request']
 
 ALLAUTH_MIDDLEWARE = ["allauth.account.middleware.AccountMiddleware"]
 
+SITE_ID = 1  # requis par django.contrib.sites
+
 # Provider specific settings
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
@@ -32,5 +34,20 @@ SOCIALACCOUNT_PROVIDERS = {
             'secret': '456',
             'key': ''
         }
+    },
+    'facebook': {
+        'APP': {
+            'client_id': '',
+            'secret': '',
+            'key': ''
+        }
     }
 }
+
+# ACCOUNT_EMAIL_VERIFICATION = "mandatory"
+# ACCOUNT_LOGIN_METHODS = {"email"}
+# ACCOUNT_LOGOUT_ON_PASSWORD_CHANGE = False
+# ACCOUNT_LOGIN_BY_CODE_ENABLED = True
+# ACCOUNT_EMAIL_VERIFICATION_BY_CODE_ENABLED = True
+# ACCOUNT_SIGNUP_FIELDS = ["email*", "password1*", "password2*"]
+# # Pour permettre la connexion avec téléphone en plus (voir section plus bas)

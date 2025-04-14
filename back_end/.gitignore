@@ -12,3 +12,6 @@ __pycache__/
 # Ignorer les fichiers liés aux environnements virtuels Python
 .env-depot/
 venv/
+
+# Ignorer la base de donnée sql et les migration
+*.sqlite3

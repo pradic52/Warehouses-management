@@ -24,7 +24,7 @@ from config.env import (
 # Manage application settings
 from config.appconfig.appinstall import *
 from config.appconfig.appinstall import (
-    APP_LIST
+    APP_LIST, MIDDLEWARE_APP
 )
 env.read_env(os.path.join(BASE_DIR, '.env'))
 
@@ -45,7 +45,7 @@ ALLOWED_HOSTS = env.list("DJANGO_ALLOWED_HOSTS", default=["localhost"])
 INSTALLED_APPS = APP_LIST + INSTALLED_APPS_BASE
 
 
-MIDDLEWARE = MIDDLEWARE_BASE + MIDDLEWARE_APP
+MIDDLEWARE = MIDDLEWARE_APP + MIDDLEWARE_BASE 
 
 ROOT_URLCONF = 'config.urls'
 
@@ -62,6 +62,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
+AUTH_USER_MODEL = 'account_config.User' # user in account.auth.user
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
@@ -101,8 +102,8 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/5.1/ref/settings/#time-zone
 LANGUAGE_CODE = 'en-us'
 LANGUAGES = [
-    ("en", gettext_noop("English")),
-    ("fr", gettext_noop("French")),
+    ("en-us", gettext_noop("English")),
+    ("fr-Fr", gettext_noop("French")),
 ] 
 
 TIME_ZONE = 'America/Montreal'
