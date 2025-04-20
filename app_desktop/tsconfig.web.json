@@ -1,0 +1,27 @@
+{
+  "extends": "@electron-toolkit/tsconfig/tsconfig.web.json",
+  "include": [
+    "src/renderer/src/env.d.ts",
+    "src/renderer/src/**/*",
+    "src/renderer/src/**/*.tsx",
+    "src/preload/*.d.ts",
+    "src/lib/**/*",
+    "globaltype/**/*"  
+  ],
+  "compilerOptions": {
+    "composite": true,
+    "jsx": "react-jsx",
+    "baseUrl": ".",
+    "paths": {
+      "@renderer/*": ["src/renderer/src/*"],
+      "@components/*": ["src/renderer/src/components/*"],
+      "@pages/*": ["src/renderer/src/pages/*"],
+      "@utils/*": ["src/renderer/src/utils/*"],
+      "@styles/*": ["src/renderer/src/styles/*"],
+      "@database/*": ["src/main/database/*"],
+      "@ipc/*": ["src/main/ipc/*"],
+      "@globaltype/*": ["@globaltype/*"]
+      // Ajoutez d'autres alias si besoin...
+    }
+  }
+}

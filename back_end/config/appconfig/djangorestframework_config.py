@@ -2,12 +2,17 @@
 DRF_APP_LIST = [
     'rest_framework',
     'rest_framework.authtoken',
+    
+    # documentation OpenAPI pour DRF
+    "drf_spectacular",
 ]
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ],
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+    
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.TokenAuthentication',
@@ -20,3 +25,6 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 10,
 }
 
+SPECTACULAR_SETTINGS = {
+    "EXTERNAL_DOCS": {"description": "allauth", "url": "/_allauth/openapi.html"},
+}

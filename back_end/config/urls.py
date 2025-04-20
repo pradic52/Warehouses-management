@@ -23,6 +23,8 @@ urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),  # Pour changer la langue via POST
 ]
 
+## Views de test 
+from account_config.views import hello
 urlpatterns += i18n_patterns(
-    path('accounts/', include('allauth.urls'))
+    path("", hello )
 )

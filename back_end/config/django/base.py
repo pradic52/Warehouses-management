@@ -10,7 +10,6 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 import os
-from django.utils.translation import gettext_noop
 
 # This is the default settings file for Django.
 from config.env import (
@@ -102,8 +101,8 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/5.1/ref/settings/#time-zone
 LANGUAGE_CODE = 'en-us'
 LANGUAGES = [
-    ("en-us", gettext_noop("English")),
-    ("fr-Fr", gettext_noop("French")),
+    ("en-us", "English"),
+    ("fr-Fr", "French"),
 ] 
 
 TIME_ZONE = 'America/Montreal'
